@@ -1,30 +1,386 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Presentación Personal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Patrio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #005628;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .seccion {
+            width: 100vw;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .papel-picado {
+            position: absolute;
+            top: 0;
+            width: 70%;
+            max-width: 900px;
+            height: auto;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .portada-contenido {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 120px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .img-personaje-portada {
+            height: 280px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .btn-principal {
+            background-color: #e05326;
+            color: #ffffff;
+            font-size: 40px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            padding: 20px 45px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 8px 0px #8a2e12;
+            white-space: nowrap;
+            position: relative;
+            z-index: 20;
+            cursor: pointer;
+        }
+
+        .titulo-indice {
+            background-color: #f5c027;
+            color: #000000;
+            font-size: 50px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            padding: 15px 70px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-menu {
+            background-color: #f5c027;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .titulo-seccion-amarillo {
+            color: #f5c027;
+            font-size: 60px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+        }
+
+        .linea-central {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ffffff;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .linea-central::before, .linea-central::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 16px;
+            background-color: #ffffff;
+            top: -6px;
+        }
+
+        .linea-central::before { left: 0; }
+        .linea-central::after { right: 0; }
+
+        .timeline-items {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .item-tiempo {
+            width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+        }
+
+        .item-tiempo p {
+            font-size: 11px;
+            text-align: center;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+        }
+
+        .badge-verde { background-color: #1e7e45; color: #ffffff; }
+        .badge-rojo { background-color: #b8252a; color: #ffffff; }
+
+        .flecha-abajo {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid #ffffff;
+            margin-top: 6px;
+        }
+
+        .flecha-arriba {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .pos-top { top: 0; justify-content: flex-end; }
+        .pos-bottom { bottom: 0; justify-content: flex-start; }
+
+        .item-1 { left: 0%; }
+        .item-2 { left: 20%; }
+        .item-3 { left: 40%; }
+        .item-4 { left: 60%; }
+        .item-5 { left: 80%; }
+        .item-6 { left: 90%; }
+
+        .grid-personajes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .tarjeta-personaje {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .tarjeta-personaje h3 {
+            font-size: 16px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            margin-bottom: 12px;
+            white-space: nowrap;
+        }
+
+        .circulo-foto {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            overflow: hidden;
+            margin-bottom: 12px;
+            background-color: #000;
+        }
+
+        .circulo-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta-personaje p {
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .texto-datos {
+            max-width: 750px;
+            text-align: center;
+        }
+
+        .texto-datos p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Presentación Personal</h1>
+    <section id="portada" class="seccion">
+        <img src="papelpic.png" alt="Papel Picado" class="papel-picado">
+        <div class="portada-contenido">
+            <img src="mariachi.png" alt="Mariachi" class="img-personaje-portada">
+            <a href="#indice" class="btn-principal">MES PATRIO</a>
+            <img src="bailarina.png" alt="Bailarina" class="img-personaje-portada">
+        </div>
+    </section>
 
-    <h2>Datos Personales</h2>
-    <p>
-        <b>Nombre completo:</b> Morales Olmos Ricardo<br>
-        <b>Edad:</b> 17 años
-    </p>
+    <section id="indice" class="seccion">
+        <div class="titulo-indice">Índice</div>
+        <div class="contenedor-menu">
+            <a href="#linea-tiempo" class="btn-menu">• Fechas importantes (Linea de tiempo)</a>
+            <a href="#personajes" class="btn-menu">• Personajes ilustres</a>
+            <a href="#datos-mitos" class="btn-menu">• Datos Curiosos y Mitos</a>
+        </div>
+    </section>
 
-    <h2>Información Escolar</h2>
-    <p>
-        <b>Escuela:</b> CBTis 128<br>
-        <b>Semestre:</b> 5to<br>
-        <b>Grupo:</b> I
-    </p>
+    <section id="linea-tiempo" class="seccion">
+        <h2 class="titulo-seccion-amarillo">Línea de tiempo</h2>
+        <div class="timeline-wrapper">
+            <div class="linea-central"></div>
+            <div class="timeline-items">
+                
+                <div class="item-tiempo pos-top item-1">
+                    <span class="badge badge-verde">1810</span>
+                    <p>Madrugada del 16 de septiembre. Miguel Hidalgo convoca al pueblo a levantarse en armas contra el dominio español.</p>
+                    <div class="flecha-abajo"></div>
+                </div>
 
-    <h2>Gustos y Aficiones</h2>
-    <p>
-        <b>Color favorito:</b> Blanco y Morado<br>
-        <b>Pasatiempo favorito:</b> Jugar Xbox jeje
-    </p>
+                <div class="item-tiempo pos-bottom item-2">
+                    <div class="flecha-arriba"></div>
+                    <span class="badge badge-rojo">1820</span>
+                    <p>Firma del Plan de Iguala y los Tratados de Córdoba para pactar la independencia de México.</p>
+                </div>
+
+                <div class="item-tiempo pos-top item-3">
+                    <span class="badge badge-rojo">1830</span>
+                    <p>Periodo de consolidación del Estado Mexicano y conflictos políticos tras la independencia.</p>
+                    <div class="flecha-abajo"></div>
+                </div>
+
+                <div class="item-tiempo pos-bottom item-4">
+                    <div class="flecha-arriba"></div>
+                    <span class="badge badge-verde">1850</span>
+                    <p>Época previa a la Guerra de Reforma y desarrollo de las leyes liberales en México.</p>
+                </div>
+
+                <div class="item-tiempo pos-top item-5">
+                    <span class="badge badge-verde">1910</span>
+                    <p>Inicio de la Revolución Mexicana convocada por Francisco I Madero el 20 de noviembre</p>
+                    <div class="flecha-abajo"></div>
+                </div>
+
+                <div class="item-tiempo pos-bottom item-6">
+                    <div class="flecha-arriba"></div>
+                    <span class="badge badge-rojo">1920</span>
+                    <p>Fin de la fase armada de la Revolución Mexicana e inicio de la reconstrucción nacional.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="personajes" class="seccion">
+        <h2 class="titulo-seccion-amarillo">Personajes clave</h2>
+        <div class="grid-personajes">
+            <div class="tarjeta-personaje">
+                <h3>Miguel Hidalgo</h3>
+                <div class="circulo-foto">
+                    <img src="miguelhidalgo.png" alt="Miguel Hidalgo">
+                </div>
+                <p>"Padre de la Patria". Inició la Independencia de México el 16 de septiembre de 1810 convocando al pueblo en Dolores.</p>
+            </div>
+            <div class="tarjeta-personaje">
+                <h3>José Ma. Morelos</h3>
+                <div class="circulo-foto">
+                    <img src="morelos.png" alt="José María Morelos">
+                </div>
+                <p>"Siervo de la Nación". Lideró el movimiento insurgente y redactó el documento Sentimientos de la Nación.</p>
+            </div>
+            <div class="tarjeta-personaje">
+                <h3>Agustín Iturbide</h3>
+                <div class="circulo-foto">
+                    <img src="iturbide.png" alt="Agustín de Iturbide">
+                </div>
+                <p>Comandante del Ejército Trigarante que consumó la independencia de México mediante el Plan de Iguala en 1821.</p>
+            </div>
+            <div class="tarjeta-personaje">
+                <h3>Vicente Guerrero</h3>
+                <div class="circulo-foto">
+                    <img src="guerrero.png" alt="Vicente Guerrero">
+                </div>
+                <p>Insurgente que mantuvo viva la lucha en el sur y pactó el famoso "Abrazo de Acatempan" con Iturbide.</p>
+            </div>
+            <div class="tarjeta-personaje">
+                <h3>Josefa Ortiz</h3>
+                <div class="circulo-foto">
+                    <img src="josefa.png" alt="Josefa Ortiz">
+                </div>
+                <p>La "Corregidora". Pieza clave de la Conspiración de Querétaro al avisar que el movimiento insurgente había sido descubierto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="datos-mitos" class="seccion">
+        <h1 class="titulo-seccion-amarillo">Datos Curiosos<br>y Mitos</h1>
+        <div class="texto-datos">
+            <p>(Dato Curioso – El Grito del 15): Aunque el Grito de Independencia ocurrió en la madrugada del 16 de septiembre de 1810, la tradición de celebrarlo la noche del 15 de septiembre a las 11:00 PM se popularizó durante el gobierno de Porfirio Díaz para hacer coincidir el festejo nacional con la fecha de su cumpleaños.</p>
+            <p>(Mito – La Campana de Dolores): Existe el mito de que Miguel Hidalgo tocó personalmente la campana para llamar al pueblo a las armas. Sin embargo, los registros históricos indican que fue el campanero de la parroquia, José José Galván, quien hizo sonar la campana mientras Hidalgo convocaba a la multitud.</p>
+        </div>
+    </section>
 
 </body>
 </html>
