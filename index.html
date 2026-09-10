@@ -2,460 +2,199 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Patrio</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            background-color: #006847;
+            color: white;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #0d47a1;
-            background: linear-gradient(180deg, #006847 0%, #004d34 100%);
-            color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* ENCABEZADO Y BARRA DE NAVEGACIÓN HORIZONTAL */
-        header.top-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70px;
+        header {
             background-color: #004d34;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            border-bottom: 4px solid #ce1126;
+            padding: 20px;
+            border-bottom: 5px solid #ce1126;
         }
 
-        header.top-header .logo {
-            color: #ffffff;
-            font-size: 22px;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            text-decoration: none;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        h1 {
+            color: #fbd043;
+            margin-bottom: 15px;
         }
 
-        header.top-header nav ul {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-            list-style-type: none;
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        header.top-header nav ul li a {
-            background-color: #ffffff;
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            background-color: white;
             color: #006847;
-            font-size: 13px;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 12px;
+            padding: 8px 15px;
             text-decoration: none;
-            border: 2px solid #ce1126;
-            transition: all 0.3s ease;
-            display: block;
+            font-weight: bold;
+            border-radius: 5px;
         }
 
-        header.top-header nav ul li a:hover {
+        nav a:hover {
             background-color: #ce1126;
-            color: #ffffff;
-            border-color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        /* CUERPO DEL SITIO */
-        main {
-            margin-top: 70px;
+            color: white;
         }
 
         .seccion {
-            width: 100vw;
-            min-height: calc(100vh - 70px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 60px 20px;
-            overflow: hidden;
+            padding: 40px 20px;
+            border-bottom: 2px solid white;
         }
 
-        .seccion:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .titulo-seccion-amarillo {
-            color: #fbd043;
-            font-size: 50px;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            margin-bottom: 40px;
-            text-align: center;
-            line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .timeline-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-        }
-
-        .linea-central {
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background-color: #ffffff;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
-        }
-
-        .linea-central::before, .linea-central::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 18px;
-            background-color: #ffffff;
-            top: -7px;
-        }
-
-        .linea-central::before { left: 0; }
-        .linea-central::after { right: 0; }
-
-        .timeline-items {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .item-tiempo {
-            width: 130px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-        }
-
-        .item-tiempo p {
-            font-size: 11px;
-            text-align: center;
-            line-height: 1.2;
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 6px;
-            border-radius: 6px;
-            margin-top: 4px;
-        }
-
-        .badge {
-            padding: 6px 16px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 18px;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            border: 2px solid #ffffff;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-        }
-
-        .badge-verde { background-color: #006847; color: #ffffff; }
-        .badge-rojo { background-color: #ce1126; color: #ffffff; }
-
-        .flecha-abajo {
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 10px solid #ffffff;
-            margin-top: 6px;
-        }
-
-        .flecha-arriba {
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 10px solid #ffffff;
-            margin-bottom: 6px;
-        }
-
-        .pos-top { top: 0; justify-content: flex-end; }
-        .pos-bottom { bottom: 0; justify-content: flex-start; }
-
-        .item-1 { left: 0%; }
-        .item-2 { left: 20%; }
-        .item-3 { left: 40%; }
-        .item-4 { left: 60%; }
-        .item-5 { left: 80%; }
-        .item-6 { left: 90%; }
-
-        .grid-personajes {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .tarjeta-personaje {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.08);
-            padding: 15px 10px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .tarjeta-personaje h3 {
-            font-size: 15px;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            margin-bottom: 12px;
-            white-space: nowrap;
-            color: #fbd043;
-        }
-
-        .circulo-foto {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 4px solid #ce1126;
-            overflow: hidden;
-            margin-bottom: 12px;
-            background-color: #000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-        }
-
-        .circulo-foto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .tarjeta-personaje p {
-            font-size: 11px;
-            line-height: 1.3;
-        }
-
-        .texto-datos {
-            max-width: 750px;
-            text-align: center;
-        }
-
-        .texto-datos p {
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 25px;
+        .tarjeta {
+            display: inline-block;
+            width: 220px;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 5px solid #ce1126;
+            border: 2px solid white;
+            margin: 10px;
+            padding: 15px;
+            vertical-align: top;
+            border-radius: 8px;
         }
 
-        /* FOOTER CON DATOS COMPLETOS */
+        .tarjeta img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #ce1126;
+        }
+
+        .caja-texto {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid white;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 600px;
+            text-align: left;
+            border-radius: 5px;
+        }
+
         footer {
-            width: 100%;
             background-color: #003824;
             border-top: 5px solid #ce1126;
-            padding: 30px 20px;
-            position: relative;
-        }
-
-        .footer-contenido {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 20px;
         }
 
         .img-footer {
-            height: 140px;
-            width: auto;
-            object-fit: contain;
+            width: 80px;
+            vertical-align: middle;
         }
 
-        .footer-texto {
-            text-align: center;
+        .datos-footer {
+            display: inline-block;
+            margin: 0 20px;
+            vertical-align: middle;
         }
 
-        .footer-texto h2 {
-            color: #ffffff;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            font-size: 24px;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 0px #ce1126, -2px -2px 0px #006847;
+        .datos-footer h2 {
+            margin: 5px 0;
+            font-size: 20px;
         }
 
-        .footer-texto p {
-            font-size: 15px;
+        .datos-footer p {
             color: #fbd043;
-            margin-top: 4px;
+            margin: 5px 0;
             font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            header.top-header {
-                flex-direction: column;
-                height: auto;
-                padding: 15px;
-            }
-            header.top-header nav ul {
-                flex-direction: column;
-                margin-top: 10px;
-            }
-            main {
-                margin-top: 140px;
-            }
-            .grid-personajes {
-                flex-direction: column;
-            }
-            .footer-contenido {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .img-footer {
-                height: 100px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ENCABEZADO Y BARRA DE NAVEGACIÓN HORIZONTAL -->
-    <header class="top-header">
-        <a href="#linea-tiempo" class="logo">🇲🇽 MES PATRIO</a>
+    <header>
+        <h1>MES PATRIO DE MÉXICO</h1>
         <nav>
             <ul>
-                <li><a href="#linea-tiempo">Línea de tiempo</a></li>
-                <li><a href="#personajes">Personajes ilustres</a></li>
-                <li><a href="#datos-mitos">Datos Curiosos y Mitos</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#personajes">Personajes</a></li>
+                <li><a href="#mitos">Mitos y Datos</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- CUERPO DE LA PÁGINA (Imágenes y texto) -->
-        <section id="linea-tiempo" class="seccion">
-            <h2 class="titulo-seccion-amarillo">Línea de tiempo</h2>
-            <div class="timeline-wrapper">
-                <div class="linea-central"></div>
-                <div class="timeline-items">
-                    <div class="item-tiempo pos-top item-1">
-                        <span class="badge badge-verde">1810</span>
-                        <p>Madrugada del 16 de septiembre. Miguel Hidalgo convoca al pueblo a levantarse en armas contra el dominio español.</p>
-                        <div class="flecha-abajo"></div>
-                    </div>
-                    <div class="item-tiempo pos-bottom item-2">
-                        <div class="flecha-arriba"></div>
-                        <span class="badge badge-rojo">1820</span>
-                        <p>Firma del Plan de Iguala y los Tratados de Córdoba para pactar la independencia de México.</p>
-                    </div>
-                    <div class="item-tiempo pos-top item-3">
-                        <span class="badge badge-rojo">1830</span>
-                        <p>Periodo de consolidación del Estado Mexicano y conflictos políticos tras la independencia.</p>
-                        <div class="flecha-abajo"></div>
-                    </div>
-                    <div class="item-tiempo pos-bottom item-4">
-                        <div class="flecha-arriba"></div>
-                        <span class="badge badge-verde">1850</span>
-                        <p>Época previa a la Guerra de Reforma y desarrollo de las leyes liberales en México.</p>
-                    </div>
-                    <div class="item-tiempo pos-top item-5">
-                        <span class="badge badge-verde">1910</span>
-                        <p>Inicio de la Revolución Mexicana convocada por Francisco I Madero el 20 de noviembre</p>
-                        <div class="flecha-abajo"></div>
-                    </div>
-                    <div class="item-tiempo pos-bottom item-6">
-                        <div class="flecha-arriba"></div>
-                        <span class="badge badge-rojo">1920</span>
-                        <p>Fin de la fase armada de la Revolución Mexicana e inicio de la reconstrucción nacional.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="personajes" class="seccion">
-            <h2 class="titulo-seccion-amarillo">Personajes clave</h2>
-            <div class="grid-personajes">
-                <article class="tarjeta-personaje">
-                    <h3>Miguel Hidalgo</h3>
-                    <div class="circulo-foto">
-                        <img src="miguelhidalgo.png" alt="Miguel Hidalgo">
-                    </div>
-                    <p>"Padre de la Patria". Inició la Independencia de México el 16 de septiembre de 1810 convocando al pueblo en Dolores.</p>
-                </article>
-                <article class="tarjeta-personaje">
-                    <h3>José Ma. Morelos</h3>
-                    <div class="circulo-foto">
-                        <img src="morelos.png" alt="José María Morelos">
-                    </div>
-                    <p>"Siervo de la Nación". Lideró el movimiento insurgente y redactó el documento Sentimientos de la Nación.</p>
-                </article>
-                <article class="tarjeta-personaje">
-                    <h3>Agustín Iturbide</h3>
-                    <div class="circulo-foto">
-                        <img src="iturbide.png" alt="Agustín de Iturbide">
-                    </div>
-                    <p>Comandante del Ejército Trigarante que consumó la independencia de México mediante el Plan de Iguala en 1821.</p>
-                </article>
-                <article class="tarjeta-personaje">
-                    <h3>Vicente Guerrero</h3>
-                    <div class="circulo-foto">
-                        <img src="guerrero.png" alt="Vicente Guerrero">
-                    </div>
-                    <p>Insurgente que mantuvo viva la lucha en el sur y pactó el famoso "Abrazo de Acatempan" con Iturbide.</p>
-                </article>
-                <article class="tarjeta-personaje">
-                    <h3>Josefa Ortiz</h3>
-                    <div class="circulo-foto">
-                        <img src="josefa.png" alt="Josefa Ortiz">
-                    </div>
-                    <p>La "Corregidora". Pieza clave de la Conspiración de Querétaro al avisar que el movimiento insurgente había sido descubierto.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="datos-mitos" class="seccion">
-            <h1 class="titulo-seccion-amarillo">Datos Curiosos<br>y Mitos</h1>
-            <div class="texto-datos">
-                <p>(Dato Curioso – El Grito del 15): Aunque el Grito de Independencia ocurrió en la madrugada del 16 de septiembre de 1810, la tradición de celebrarlo la noche del 15 de septiembre a las 11:00 PM se popularizó durante el gobierno de Porfirio Díaz para hacer coincidir el festejo nacional con la fecha de su cumpleaños.</p>
-                <p>(Mito – La Campana de Dolores): Existe el mito de que Miguel Hidalgo tocó personalmente la campana para llamar al pueblo a las armas. Sin embargo, los registros históricos indican que fue el campanero de la parroquia, José Galván, quien hizo sonar la campana mientras Hidalgo convocaba a la multitud.</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER CON DATOS COMPLETOS -->
-    <footer>
-        <div class="footer-contenido">
-            <img src="mariachi.png" alt="Mariachi" class="img-footer">
-            <div class="footer-texto">
-                <h2>MORALES OLMOS RICARDO</h2>
-                <p>No. de Control: 24308051280597</p>
-                <p>Grado y Grupo: 5to I</p>
-            </div>
-            <img src="bailarina.png" alt="Bailarina" class="img-footer">
+    <section id="historia" class="seccion">
+        <h2>Línea de Tiempo de la Independencia</h2>
+        
+        <div class="caja-texto">
+            <h3>1810 - El Inicio</h3>
+            <p>La madrugada del 16 de septiembre de 1810, el cura Miguel Hidalgo da el Grito de Dolores llamando al pueblo a levantarse contra el dominio español.</p>
         </div>
+
+        <div class="caja-texto">
+            <h3>1813 - Sentimientos de la Nación</h3>
+            <p>José María Morelos organiza el movimiento insurgente y expone los puntos para declarar libre a América y abolir la esclavitud.</p>
+        </div>
+
+        <div class="caja-texto">
+            <h3>1821 - Consumación</h3>
+            <p>Agustín de Iturbide y Vicente Guerrero se unen mediante el Abrazo de Acatempan y entra el Ejército Trigarante a la Ciudad de México, logrando la independencia.</p>
+        </div>
+    </section>
+
+    <section id="personajes" class="seccion">
+        <h2>Personajes Ilustres</h2>
+
+        <div class="tarjeta">
+            <img src="miguelhidalgo.png" alt="Miguel Hidalgo">
+            <h3>Miguel Hidalgo</h3>
+            <p>Conocido como el "Padre de la Patria", inició la lucha por la independencia en 1810.</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="morelos.png" alt="José María Morelos">
+            <h3>José Ma. Morelos</h3>
+            <p>El "Siervo de la Nación", continuó la lucha y fue líder militar y político de la insurgencia.</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="josefa.png" alt="Josefa Ortiz">
+            <h3>Josefa Ortiz</h3>
+            <p>La "Corregidora", personaje clave que avisó a los insurgentes que la conspiración había sido descubierta.</p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="guerrero.png" alt="Vicente Guerrero">
+            <h3>Vicente Guerrero</h3>
+            <p>General insurgente que mantuvo la resistencia en el sur y concretó el fin de la guerra.</p>
+        </div>
+    </section>
+
+    <section id="mitos" class="seccion">
+        <h2>Datos Curiosos y Mitos</h2>
+
+        <div class="caja-texto">
+            <h3>El Grito el 15 de Septiembre</h3>
+            <p>El Grito de Independencia realmente ocurrió durante la madrugada del 16 de septiembre. La tradición de celebrarlo la noche del 15 a las 11:00 PM se popularizó durante la época de Porfirio Díaz para hacerlo coincidir con su cumpleaños.</p>
+        </div>
+
+        <div class="caja-texto">
+            <h3>¿Quién tocó la campana?</h3>
+            <p>Existe el mito de que Miguel Hidalgo tocó la campana de Dolores para reunir a la gente. La realidad histórica indica que fue el campanero de la iglesia, José Galván, quien la hizo sonar.</p>
+        </div>
+    </section>
+
+    <footer>
+        <img src="mariachi.png" alt="Mariachi" class="img-footer">
+        
+        <div class="datos-footer">
+            <h2>MORALES OLMOS RICARDO</h2>
+            <p>No. de Control: 24308051280597</p>
+            <p>Grado y Grupo: 5to I</p>
+        </div>
+
+        <img src="bailarina.png" alt="Bailarina" class="img-footer">
     </footer>
 
 </body>
