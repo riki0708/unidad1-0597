@@ -13,26 +13,16 @@
             text-align: center;
         }
 
-        header {
-            background-color: #004d34;
-            padding: 20px;
-            border-bottom: 5px solid #ce1126;
-        }
-
         h1 {
             color: #fbd043;
             margin-bottom: 15px;
+            margin-top: 20px;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            display: inline;
-            margin: 0 10px;
+        nav {
+            background-color: #004d34;
+            padding: 15px;
+            border-bottom: 5px solid #ce1126;
         }
 
         nav a {
@@ -42,6 +32,8 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
+            margin: 0 10px;
+            display: inline-block;
         }
 
         nav a:hover {
@@ -113,18 +105,15 @@
 </head>
 <body>
 
-    <header>
-        <h1>MES PATRIO</h1>
-        <nav>
-            <ul>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#personajes">Personajes</a></li>
-                <li><a href="#mitos">Mitos y Datos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>MES PATRIO</h1>
 
-    <section id="historia" class="seccion">
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#personajes">Personajes</a>
+        <a href="#mitos">Mitos y Datos</a>
+    </nav>
+
+    <div id="historia" class="seccion">
         <h2>Línea de Tiempo de la Independencia</h2>
         
         <div class="caja-texto">
@@ -141,9 +130,9 @@
             <h3>1821 - Consumación</h3>
             <p>Agustín de Iturbide y Vicente Guerrero se unen mediante el Abrazo de Acatempan y entra el Ejército Trigarante a la Ciudad de México, logrando la independencia.</p>
         </div>
-    </section>
+    </div>
 
-    <section id="personajes" class="seccion">
+    <div id="personajes" class="seccion">
         <h2>Personajes Ilustres</h2>
 
         <div class="tarjeta">
@@ -169,9 +158,9 @@
             <h3>Vicente Guerrero</h3>
             <p>General insurgente que mantuvo la resistencia en el sur y concretó el fin de la guerra.</p>
         </div>
-    </section>
+    </div>
 
-    <section id="mitos" class="seccion">
+    <div id="mitos" class="seccion">
         <h2>Datos Curiosos y Mitos</h2>
 
         <div class="caja-texto">
@@ -183,7 +172,7 @@
             <h3>¿Quién tocó la campana?</h3>
             <p>Existe el mito de que Miguel Hidalgo tocó la campana de Dolores para reunir a la gente. La realidad histórica indica que fue el campanero de la iglesia, José Galván, quien la hizo sonar.</p>
         </div>
-    </section>
+    </div>
 
     <footer>
         <img src="mariachi.png" alt="Mariachi" class="img-footer">
