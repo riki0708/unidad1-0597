@@ -1,0 +1,115 @@
+/* Estilos generales de la pagina */
+/* Define el fondo verde, texto blanco y fuente principal */
+body {
+    background-color: #006847;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Encabezado principal */
+/* Da color dorado y espacio al titulo superior */
+h1 {
+    color: #fbd043;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+/* Barra de navegacion */
+/* Fondo verde oscuro con borde inferior rojo */
+nav {
+    background-color: #004d34;
+    padding: 15px;
+    border-bottom: 5px solid #ce1126;
+}
+
+/* Botones de navegacion y su efecto al pasar el cursor */
+nav a {
+    background-color: white;
+    color: #006847;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ce1126;
+    color: white;
+}
+
+/* Estilos para los bloques de contenido */
+/* Espaciado de las secciones y separadores blancos */
+.seccion {
+    padding: 40px 20px;
+    border-bottom: 2px solid white;
+}
+
+/* Diseño de tarjetas de personajes */
+/* Tarjetas transparentes alineadas horizontalmente */
+.tarjeta {
+    display: inline-block;
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    margin: 10px;
+    padding: 15px;
+    vertical-align: top;
+    border-radius: 8px;
+}
+
+/* Imagenes circulares con borde rojo para personajes */
+.tarjeta img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ce1126;
+}
+
+/* Cajas para datos curiosos y mitos */
+/* Contenedores oscuros alineados a la izquierda */
+.caja-texto {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+/* Pie de pagina */
+/* Fondo verde muy oscuro con linea roja superior */
+footer {
+    background-color: #003824;
+    border-top: 5px solid #ce1126;
+    padding: 20px;
+}
+
+/* Imagenes decorativas laterales del footer */
+.img-footer {
+    width: 80px;
+    vertical-align: middle;
+}
+
+/* Bloque central para el nombre y datos del estudiante */
+.datos-footer {
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: middle;
+}
+
+.datos-footer h2 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.datos-footer p {
+    color: #fbd043;
+    margin: 5px 0;
+    font-weight: bold;
+}
