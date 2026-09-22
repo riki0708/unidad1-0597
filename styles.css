@@ -1,115 +1,111 @@
-/* Estilos generales de la pagina */
-/* Define el fondo verde, texto blanco y fuente principal */
+/* Resetea márgenes globales, define el color de fondo base y la tipografía del sitio */
 body {
-    background-color: #006847;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    background-color: #006847; /* Aplica el fondo verde mediante su código hexadecimal */
+    color: white; /* Define el color blanco por defecto para todos los textos */
+    font-family: Arial, sans-serif; /* Establece la fuente tipográfica global */
+    margin: 0; /* Remueve el margen exterior predeterminado del navegador */
+    padding: 0; /* Elimina el relleno interno predeterminado */
+    text-align: center; /* Centra horizontalmente los elementos contenidos */
 }
 
-/* Encabezado principal */
-/* Da color dorado y espacio al titulo superior */
+/* Aplica el color dorado y espacios al título H1 */
 h1 {
-    color: #fbd043;
-    margin-bottom: 15px;
-    margin-top: 20px;
+    color: #fbd043; /* Asigna el color dorado al título */
+    margin-bottom: 15px; /* Define separación inferior de 15 píxeles */
+    margin-top: 20px; /* Define separación superior de 20 píxeles */
 }
 
-/* Barra de navegacion */
-/* Fondo verde oscuro con borde inferior rojo */
+/* Estiliza el contenedor del menú de navegación */
 nav {
-    background-color: #004d34;
-    padding: 15px;
-    border-bottom: 5px solid #ce1126;
+    background-color: #004d34; /* Aplica verde oscuro al fondo del menú */
+    padding: 15px; /* Crea espacio interno alrededor de los botones */
+    border-bottom: 5px solid #ce1126; /* Añade una línea inferior roja de 5px */
 }
 
-/* Botones de navegacion y su efecto al pasar el cursor */
+/* Formatea las etiquetas de enlace <a> para que parezcan botones */
 nav a {
-    background-color: white;
-    color: #006847;
-    padding: 8px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin: 0 10px;
-    display: inline-block;
+    background-color: white; /* Fondo blanco para crear forma de botón */
+    color: #006847; /* Texto verde sobre la caja blanca */
+    padding: 8px 15px; /* Define el tamaño interno del botón (alto y ancho) */
+    text-decoration: none; /* Elimina el subrayado predeterminado del hipervínculo */
+    font-weight: bold; /* Aplica texto en negrita */
+    border-radius: 5px; /* Redondea las esquinas del botón a 5px */
+    margin: 0 10px; /* Crea separación lateral entre cada botón */
+    display: inline-block; /* Permite aplicar dimensiones de caja sin romper la línea */
 }
 
+/* Evento que cambia los colores cuando el cursor pasa sobre el botón */
 nav a:hover {
-    background-color: #ce1126;
-    color: white;
+    background-color: #ce1126; /* Cambia el fondo a rojo */
+    color: white; /* Cambia el texto a blanco */
 }
 
-/* Estilos para los bloques de contenido */
-/* Espaciado de las secciones y separadores blancos */
+/* Contenedor de bloque para agrupar los contenidos de la página */
 .seccion {
-    padding: 40px 20px;
-    border-bottom: 2px solid white;
+    padding: 40px 20px; /* Define espaciado interno superior y lateral */
+    border-bottom: 2px solid white; /* Dibuja una línea divisoria blanca al final */
 }
 
-/* Diseño de tarjetas de personajes */
-/* Tarjetas transparentes alineadas horizontalmente */
+/* Ficha rectangular para mostrar cada personaje */
 .tarjeta {
-    display: inline-block;
-    width: 220px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid white;
-    margin: 10px;
-    padding: 15px;
-    vertical-align: top;
-    border-radius: 8px;
+    display: inline-block; /* Alinea varias tarjetas de forma horizontal */
+    width: 220px; /* Fija un ancho exacto de 220px */
+    background-color: rgba(255, 255, 255, 0.1); /* Aplica fondo blanco con 10% de opacidad */
+    border: 2px solid white; /* Crea un marco de 2px de grosor */
+    margin: 10px; /* Crea espacio exterior respecto a otras tarjetas */
+    padding: 15px; /* Crea espacio interno entre contenido y borde */
+    vertical-align: top; /* Alinea los bloques al borde superior */
+    border-radius: 8px; /* Redondea los bordes a 8px */
 }
 
-/* Imagenes circulares con borde rojo para personajes */
+/* Recorta las imágenes de las tarjetas en forma circular */
 .tarjeta img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #ce1126;
+    width: 100px; /* Fija el ancho a 100px */
+    height: 100px; /* Fija el alto a 100px */
+    border-radius: 50%; /* Trunca los bordes para volver la imagen un círculo */
+    border: 3px solid #ce1126; /* Añade un borde rojo circular de 3px */
 }
 
-/* Cajas para datos curiosos y mitos */
-/* Contenedores oscuros alineados a la izquierda */
+/* Caja delimitada para lecturas y textos largos */
 .caja-texto {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid white;
-    padding: 15px;
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: left;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3); /* Aplica fondo negro al 30% de opacidad */
+    border: 1px solid white; /* Define un marco blanco de 1px */
+    padding: 15px; /* Define espaciado interno */
+    margin: 10px auto; /* Centra la caja horizontalmente */
+    max-width: 600px; /* Restringe el ancho máximo a 600px */
+    text-align: left; /* Alinea el texto interno a la izquierda */
+    border-radius: 5px; /* Redondea los bordes a 5px */
 }
 
-/* Pie de pagina */
-/* Fondo verde muy oscuro con linea roja superior */
+/* Estiliza la barra inferior del pie de página */
 footer {
-    background-color: #003824;
-    border-top: 5px solid #ce1126;
-    padding: 20px;
+    background-color: #003824; /* Aplica el verde más oscuro para el pie */
+    border-top: 5px solid #ce1126; /* Dibuja una línea superior roja de 5px */
+    padding: 20px; /* Define el espacio interno del contenedor */
 }
 
-/* Imagenes decorativas laterales del footer */
+/* Tamaño y alineación de las imágenes del pie de página */
 .img-footer {
-    width: 80px;
-    vertical-align: middle;
+    width: 80px; /* Ajusta el ancho a 80px */
+    vertical-align: middle; /* Alinea la imagen al centro vertical con el texto */
 }
 
-/* Bloque central para el nombre y datos del estudiante */
+/* Bloque central que contiene tus datos escolares */
 .datos-footer {
-    display: inline-block;
-    margin: 0 20px;
-    vertical-align: middle;
+    display: inline-block; /* Permite colocar la caja entre las dos imágenes */
+    margin: 0 20px; /* Aplica separación lateral de 20px */
+    vertical-align: middle; /* Centra el bloque verticalmente */
 }
 
+/* Título con tu nombre dentro del pie de página */
 .datos-footer h2 {
-    margin: 5px 0;
-    font-size: 20px;
+    margin: 5px 0; /* Reduce el margen vertical a 5px */
+    font-size: 20px; /* Fija el tamaño de fuente en 20px */
 }
 
+/* Texto del grupo y número de control */
 .datos-footer p {
-    color: #fbd043;
-    margin: 5px 0;
-    font-weight: bold;
+    color: #fbd043; /* Aplica el color dorado */
+    margin: 5px 0; /* Reduce los márgenes verticales */
+    font-weight: bold; /* Aplica estilo en negrita */
 }
