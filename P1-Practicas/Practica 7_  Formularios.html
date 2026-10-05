@@ -1,0 +1,179 @@
+<!DOCTYPE html> <!-- sintaxis html5 -->
+<html lang="en"> <!-- etiqueta raiz (ingles) -->
+<head> <!-- cabecera del documento -->
+<meta charset="UTF-8"> <!-- soporte de caracteres especiales -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- diseno adaptable a moviles -->
+<title>Formularios en HTML</title> <!-- titulo en la pestana -->
+<!-- Libreria de iconos en linea --> <!-- comentario original -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font- <!-- enlace a css externo -->
+awesome/7.3.1/css/all.min.css"> <!-- hoja de estilos de iconos -->
+
+</head> <!-- fin de la cabecera -->
+<body> <!-- contenido visible de la pagina -->
+<!-- texto explicativo sobre la funcion de los formularios y el backend -->
+<p>Un formulario permite al visitante cargar datos y que sean enviados al servidor.</p>
+<p>El HTML no tiene la responsabilidad de registrar los datos en el servidor,
+esta actividad se delega a traves de un lenguaje que se ejecute en el servidor (PHP,
+ASP, ASP.NET, Node, etc.)
+</p>
+<form action="" method="post"> <!-- contenedor de formulario enviando por post -->
+Ingresa tu nombre: <!-- texto de etiqueta para el campo -->
+<input type="text" name="nombre" size="20"> <!-- campo de entrada de texto -->
+<br> <!-- salto de linea -->
+<input type="submit" value="enviar"> <!-- boton de envio de datos -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario para inicio de sesion con campo de usuario y contrasena -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+
+Ingresa tu usuario: <!-- etiqueta para el usuario -->
+<input type="text" name="usuario"> <!-- campo de texto sencillo para usuario -->
+Ingresa tu contraseña: <!-- etiqueta para la contrasena -->
+<input type="password" name="pass"> <!-- campo de contrasena con caracteres ocultos -->
+<br> <!-- salto de linea -->
+<input type="submit" value="enviar"> <!-- boton para enviar formulario -->
+<input type="reset" value="borrar"> <!-- boton para limpiar los campos -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario de contacto con campo de correo y area de texto multilinea -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+<br> <!-- salto de linea -->
+Ingresa tu correo: <!-- etiqueta para el correo electronico -->
+<input type="email" name="correo"> <!-- campo con validacion de correo -->
+<br> <!-- salto de linea -->
+Ingresa tus comentarios: <!-- etiqueta para comentarios -->
+<textarea name="comentarios" rows="1" cols="10"></textarea> <!-- area de texto multilinea de 1 fila y 10 columnas -->
+<br> <!-- salto de linea -->
+<input type="submit" value="enviar"> <!-- boton para enviar formulario -->
+<input type="reset" value="borrar"> <!-- boton para limpiar los campos -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario con casillas de verificacion de seleccion multiple -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+
+<br> <!-- salto de linea -->
+Selecciona los lenguajes que conozcas: <!-- instruccion para la seleccion -->
+<br> <!-- salto de linea -->
+<input type="checkbox" name="Java">Java <br> <!-- casilla de verificacion seleccionable -->
+<input type="checkbox" name="Python"> Python <br> <!-- casilla de verificacion seleccionable -->
+<input type="checkbox" name="C#">C# <br> <!-- casilla de verificacion seleccionable -->
+<input type="checkbox" name="Flutter"> Flutter <br> <!-- casilla de verificacion seleccionable -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario con botones de opcion unica (radio buttons) -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+<br> <!-- salto de linea -->
+Selecciona el maximo de estudios que tienes: <!-- instruccion para seleccion unica -->
+<br> <!-- salto de linea -->
+<input type="radio" name="estudios" value="1">Sin estudios <br> <!-- opcion de radio unica -->
+<input type="radio" name="estudios" value="2">Primaria <br> <!-- opcion de radio unica -->
+<input type="radio" name="estudios" value="3">Secundaria <br> <!-- opcion de radio unica -->
+<input type="radio" name="estudios" value="4">Preparatoria <br> <!-- opcion de radio unica -->
+<input type="submit" value="enviar"> <!-- boton para enviar formulario -->
+<input type="reset" value="borrar"> <!-- boton para limpiar los campos -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario con menu desplegable de opciones -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+
+<br> <!-- salto de linea -->
+Selecciona tu pais: <!-- instruccion para seleccion desplegable -->
+<!-- lista desplegable de opciones -->
+<select name="pais">
+<option value="1">Argentina</option>
+<option value="2">España</option>
+<option value="3">Mexico</option>
+<option value="4">Guatemala</option>
+<option value="5">Honduras</option>
+<option value="6">El Salvador</option>
+<option value="7">Venezuela</option>
+<option value="8">Colombia</option>
+</select>
+<br> <!-- salto de linea -->
+<input type="submit" value="enviar"> <!-- boton para enviar formulario -->
+<input type="reset" value="borrar"> <!-- boton para limpiar los campos -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario usando la etiqueta button con iconos de font awesome -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+<br> <!-- salto de linea -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button> <!-- boton de envio personalizado con icono -->
+<button type="reset">Borrar <i class="fa fa-trash"></i></button> <!-- boton de reinicio personalizado con icono -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario para adjuntar o subir archivos -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+<br> <!-- salto de linea -->
+<input type="file" name="archivo"> <!-- campo para seleccionar y cargar archivo -->
+<br> <!-- salto de linea -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button> <!-- boton de envio con icono -->
+<button type="reset">Borrar <i class="fa fa-trash"></i></button> <!-- boton de reinicio con icono -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario con campo oculto para enviar datos invisibles al usuario -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+<input type="hidden" name="hora" value="3:30"> <!-- campo de entrada oculto -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre"> <!-- campo de entrada para texto -->
+<br> <!-- salto de linea -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button> <!-- boton de envio con icono -->
+<button type="reset">Borrar <i class="fa fa-trash"></i></button> <!-- boton de reinicio con icono -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario agrupado por secciones con fieldset y legend -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+<fieldset> <!-- grupo de campos de datos personales -->
+<legend>Datos personales</legend> <!-- titulo del grupo de datos personales -->
+Nombre y apellido: <!-- etiqueta para el nombre -->
+<input type="text" name="nombre_apellido"><br> <!-- campo de texto y salto de linea -->
+Documento valido: <!-- etiqueta para el documento -->
+<input type="file" name="documento"><br> <!-- campo para adjuntar documento y salto de linea -->
+Fecha de nacimiento: <!-- etiqueta para fecha de nacimiento -->
+
+<input type="date" name="fecha_nacimiento"> <!-- campo selector de fecha -->
+</fieldset> <!-- fin del grupo de datos personales -->
+<fieldset> <!-- grupo de campos de datos de estudio -->
+<legend>Datos de estudio:</legend> <!-- titulo del grupo de datos de estudio -->
+Nombre de la escuela: <!-- etiqueta para la escuela -->
+<input type="text" name="escuela"><br> <!-- campo de texto y salto de linea -->
+Certificado valido: <!-- etiqueta para el certificado -->
+<input type="file" name="certificado"><br> <!-- campo para adjuntar certificado y salto de linea -->
+Fecha de egreso: <!-- etiqueta para fecha de egreso -->
+<input type="date" name="fecha_egreso"> <!-- campo selector de fecha -->
+</fieldset> <!-- fin del grupo de datos de estudio -->
+<br> <!-- salto de linea -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button> <!-- boton de envio con icono -->
+<button type="reset">Borrar <i class="fa fa-trash"></i></button> <!-- boton de reinicio con icono -->
+</form> <!-- fin del formulario -->
+
+<!-- formulario con restricciones de entrada: deshabilitado, limite de caracteres y solo lectura -->
+<form action="" method="post"> <!-- contenedor de formulario enviado por post -->
+Ingresa tu nombre: <!-- etiqueta para el nombre -->
+<!-- Desahbilitacion de campo --> <!-- comentario sobre deshabilitacion -->
+<input type="text" name="nombre" disabled><br> <!-- campo deshabilitado no editable ni enviable -->
+<!-- Limitacion de caracteres --> <!-- comentario sobre limite de longitud -->
+Contraseña: <!-- etiqueta para la contrasena -->
+<input type="password" name="pass" maxlength="5"><br> <!-- campo limitado a un maximo de 5 caracteres -->
+<!-- Solo lectura --> <!-- comentario sobre solo lectura -->
+Comentarios: <!-- etiqueta para comentarios -->
+<textarea name="comentarios" readonly> <!-- area de texto no modificable pero enviable -->
+
+Este es mi comentario y no se puede borrar
+</textarea><br> <!-- texto fijo dentro del area y salto de linea -->
+</form> <!-- fin del formulario -->
+</body> <!-- fin del cuerpo -->
+</html> <!-- fin del documento html -->
