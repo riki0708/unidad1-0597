@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>EduKampus - Plataforma de Cursos</title> 
+</head> 
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #000000; color: #ffffff;"> 
+
+<header style="background-color: #121212; color: white; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333333;"> 
+<h1 style="margin: 0; font-size: 24px; color: #ff0000;">EduKampus</h1> 
+
+<form action="" method="get"> 
+<input type="text" name="buscar" placeholder="¿Que tema deseas aprender?" style="padding: 8px; width: 220px; border-radius: 4px; border: 1px solid #444444; background-color: #222222; color: #ffffff;"> 
+<button type="submit" style="background-color: #ff0000; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">Buscar</button> 
+</form> 
+</header> 
+
+<nav style="background-color: #181818; padding: 12px 30px; border-bottom: 1px solid #282828;"> 
+<a href="#inicio" style="color: #ffffff; margin-right: 20px; text-decoration: none;">Inicio</a> 
+<a href="#catalogos" style="color: #ffffff; margin-right: 20px; text-decoration: none;">Catalogo</a> 
+<a href="#registro" style="color: #ff0000; font-weight: bold; text-decoration: none;">Inscribirse</a> 
+</nav> 
+
+<main style="padding: 30px; max-width: 1000px; margin: 0 auto;"> 
+
+<section id="inicio" style="background-color: #181818; padding: 25px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #282828;"> 
+<h2 style="color: #ff0000; margin-top: 0;">Impulsa tu carrera con educacion en linea</h2> 
+<p style="color: #cccccc;">Accede a capacitacion profesional en tecnologia, negocios y diseno de forma flexible.</p> 
+</section> 
+
+<section id="catalogos" style="margin-bottom: 30px;"> 
+<h3 style="color: #ff0000;">Cursos destacados</h3> 
+<div style="display: flex; gap: 20px;"> 
+<div style="background-color: #181818; padding: 15px; border-radius: 8px; flex: 1; border-top: 4px solid #ff0000; border-left: 1px solid #282828; border-right: 1px solid #282828; border-bottom: 1px solid #282828;"> 
+<img src="imagen_curso1.jpg" alt="Programacion Web" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;"> 
+<h4 style="color: #ffffff;">Programacion Web</h4> 
+<p style="color: #aaaaaa; font-size: 14px;">Aprende HTML, CSS y estructuras para desarrollo.</p> 
+</div> 
+
+<div style="background-color: #181818; padding: 15px; border-radius: 8px; flex: 1; border-top: 4px solid #ff0000; border-left: 1px solid #282828; border-right: 1px solid #282828; border-bottom: 1px solid #282828;"> 
+<img src="imagen_curso2.jpg" alt="Bases de Datos" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;"> 
+<h4 style="color: #ffffff;">Bases de Datos</h4> 
+<p style="color: #aaaaaa; font-size: 14px;">Gestiona y modela informacion estructurada.</p> 
+</div> 
+</div> 
+</section> 
+
+<section id="registro" style="background-color: #181818; padding: 25px; border-radius: 8px; border: 1px solid #333333;"> 
+<h3 style="color: #ff0000; margin-top: 0;">Formulario de Inscripcion</h3> 
+<form action="" method="post"> 
+
+<span style="color: #ffffff;">Nombre completo:</span><br> 
+<input type="text" name="nombre" placeholder="Tu nombre y apellidos" style="width: 98%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #444444; border-radius: 4px; background-color: #222222; color: #ffffff;"><br> 
+
+<span style="color: #ffffff;">Correo electronico:</span><br> 
+<input type="email" name="correo" placeholder="correo@ejemplo.com" style="width: 98%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #444444; border-radius: 4px; background-color: #222222; color: #ffffff;"><br> 
+
+<span style="color: #ffffff;">Selecciona tu area de interes:</span><br> 
+<select name="area" style="width: 99%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #444444; border-radius: 4px; background-color: #222222; color: #ffffff;"> 
+<option value="web">Desarrollo Web</option> 
+<option value="datos">Ciencia de Datos</option> 
+<option value="diseno">Diseno Digital</option> 
+</select><br> 
+
+<span style="color: #ffffff;">Nivel de conocimiento:</span><br> 
+<input type="radio" name="nivel" value="principiante"> <span style="color: #ffffff;">Principiante</span> 
+<input type="radio" name="nivel" value="intermedio"> <span style="color: #ffffff;">Intermedio</span> 
+<input type="radio" name="nivel" value="avanzado"> <span style="color: #ffffff;">Avanzado</span> <br><br> 
+
+<button type="submit" style="background-color: #ff0000; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Completar Registro</button> 
+</form> 
+</section> 
+
+</main> 
+
+<footer style="background-color: #121212; color: white; text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #333333;"> 
+<p style="margin: 5px 0;">MORALES OLMOS RICARDO | 5ºI | 24308051280597</p> 
+<p style="margin: 5px 0; font-size: 13px; color: #888888;">&copy; 2026 EduKampus. Todos los derechos reservados.</p> 
+</footer> 
+
+</body> 
+</html>
