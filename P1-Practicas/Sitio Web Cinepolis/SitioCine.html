@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Cinepolis</title> 
+</head> 
+<body style="font-family: Arial; margin: 0; background: #0b111e; color: #fff;"> 
+
+<!-- Encabezado con acceso Club Cinepolis -->
+<header style="background: #060d17; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fc0;"> 
+<h1 style="margin: 0; color: #fc0; font-size: 20px;">CINÉPOLIS</h1> 
+<form action="" method="post" style="display: flex; gap: 5px;"> 
+<input type="text" placeholder="Tarjeta Club" style="padding: 4px; border-radius: 4px; border: 0; background: #1e293b; color: #fff; width: 100px;"> 
+<input type="password" placeholder="NIP" style="padding: 4px; border-radius: 4px; border: 0; background: #1e293b; color: #fff; width: 40px;"> 
+<button type="submit" style="background: #fc0; border: 0; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Ingresar</button> 
+</form> 
+</header> 
+
+<!-- Navegacion -->
+<nav style="background: #111c2e; padding: 8px 20px;"> 
+<a href="#cartelera" style="color: #fff; margin-right: 15px; text-decoration: none;">Cartelera</a> 
+<a href="#estrenos" style="color: #fff; margin-right: 15px; text-decoration: none;">Estrenos</a> 
+<a href="#registro" style="color: #fc0; text-decoration: none;">Registro</a> 
+</nav> 
+
+<!-- Cuerpo principal -->
+<main style="padding: 15px; max-width: 800px; margin: auto;"> 
+
+<!-- Cartelera -->
+<section id="cartelera"> 
+<h2 style="color: #fc0; margin: 10px 0;">En Cartelera</h2> 
+<div style="display: flex; gap: 10px;"> 
+<div style="background: #111c2e; padding: 10px; flex: 1; border-radius: 5px;"> 
+<img src="ruta_imagen_batman.jpg" alt="Batman" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;"> 
+<h3>Batman</h3> 
+<button style="background: #06c; color: #fff; border: 0; padding: 5px; width: 100%; border-radius: 4px;">Comprar</button> 
+</div> 
+<div style="background: #111c2e; padding: 10px; flex: 1; border-radius: 5px;"> 
+<img src="ruta_imagen_avatar.jpg" alt="Avatar" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;"> 
+<h3>Avatar</h3> 
+<button style="background: #06c; color: #fff; border: 0; padding: 5px; width: 100%; border-radius: 4px;">Comprar</button> 
+</div> 
+</div> 
+</section> 
+
+<!-- Proximos Estrenos -->
+<section id="estrenos"> 
+<h2 style="color: #fc0; margin: 10px 0;">Proximos Estrenos</h2> 
+<div style="display: flex; gap: 10px;"> 
+<div style="background: #111c2e; padding: 10px; flex: 1; border-radius: 5px;"> 
+<img src="ruta_imagen_gladiador2.jpg" alt="Gladiador 2" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;"> 
+<h3>Gladiador 2</h3> 
+</div> 
+<div style="background: #111c2e; padding: 10px; flex: 1; border-radius: 5px;"> 
+<img src="ruta_imagen_mivillanofavorito4.jpg" alt="Mi Villano Favorito 4" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;"> 
+<h3>Mi Villano Favorito 4</h3> 
+</div> 
+</div> 
+</section> 
+
+<!-- Formulario Registro / Inicio -->
+<section id="registro" style="background: #111c2e; padding: 15px; margin-top: 15px; border-radius: 5px;"> 
+<h2 style="color: #fc0; margin: 0 0 10px 0;">Registro de Usuario</h2> 
+<form action="" method="post"> 
+Nombre:<br><input type="text" style="width: 98%; background: #1e293b; border: 0; color: #fff; padding: 5px; margin: 3px 0 10px 0;"><br> 
+Correo:<br><input type="email" style="width: 98%; background: #1e293b; border: 0; color: #fff; padding: 5px; margin: 3px 0 10px 0;"><br> 
+Cine:<br> 
+<select style="width: 99%; background: #1e293b; border: 0; color: #fff; padding: 5px; margin: 3px 0 10px 0;"> 
+<option>Cinépolis Centro</option> 
+<option>Cinépolis VIP</option> 
+</select><br> 
+Membresia:<br> 
+<input type="radio" name="m"> Clasica <input type="radio" name="m"> VIP<br><br> 
+<button type="submit" style="background: #fc0; border: 0; padding: 8px 15px; font-weight: bold; border-radius: 4px;">Registrarse</button> 
+</form> 
+</section> 
+
+</main> 
+
+<!-- Footer con datos del estudiante -->
+<footer style="background: #060d17; text-align: center; padding: 10px; margin-top: 20px; border-top: 1px solid #1e293b;"> 
+<p style="margin: 0;">MORALES OLMOS RICARDO | 5ºI | 24308051280597</p> 
+<p style="margin: 5px 0 0 0; font-size: 12px; color: #64748b;">&copy; 2026 Cinépolis.</p> 
+</footer> 
+
+</body> 
+</html>
